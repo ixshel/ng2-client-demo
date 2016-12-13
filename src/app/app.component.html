@@ -1,0 +1,44 @@
+<h1 class="text-center"> {{title}} </h1>
+
+<div class="container-fluid">
+  <div>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Country</th>
+        <th>Poster</th>
+        <th>Seasons</th>
+        <th>Genre</th>
+        <th>Summary</th>
+        <th>Year</th>
+      </tr>
+      <tr *ngFor='let item of shows'>
+        <td> {{ item.title }} </td>
+        <td> {{ item.country }} </td>
+        <td>
+          <img width="45px" src="{{ item.poster }}" alt="angular">
+        </td>
+        <td> {{ item.seasons }} </td>
+        <td> {{ item.genre }} </td>
+        <td> {{ item.summary }} </td>
+        <td> {{ item.year }} </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<div class="container">
+  <form (ngSubmit)='submitNew()'>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon">
+        <span class="glyphicon glyphicon-user"></span>
+        <input type="text" class="form-control" placeholder="Title" [(ngModel)]="show.title" name="title">
+        </span>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Add</button>
+    </div>
+  </form>
+</div>
